@@ -1,5 +1,21 @@
 # PA1 - UTF-8: Due 10/10 at 10pm
 
+## Errata/Clarifications
+
+- **Most important**: The `test_script` we shared has an unfortunate bug – if a `.txt.expect` file doesn't have a blank line at the end, it may skip checking that the last line of the `.expect` correctly matches the program's output. So, to be super sure your tests are working, you should make sure your `.test.expect` files have a blank line/newline at the end. Our two sample tests didn't! So if you were confused about why a test was passing that shouldn't, that could be a reason why.
+- Some people noticed that in our provided test we didn't include the quotes around the output for uppercased ASCII:
+  
+  `Uppercased ASCII: "MY 🐩’S NAME IS ERDőS."`
+  
+  vs.
+  
+  `Uppercased ASCII: MY 🐩’S NAME IS ERDőS.`
+  
+  Either is fine. If you want to pick one, include the quotes. 
+- The problem didn't say what to do with `utf8_substring` if the end index is larger than the `utf8_strlen` for the string. In that case, it should act as if the end index was exactly `utf8_strlen` of the string. That makes it so if you take the substring of the first 6 code points of a string with fewer than 6, you get the whole string.
+
+## UTF-8
+
 Representing text is straightforward using ASCII: one byte per character fits well within `char[]` and it represents most English text. However, there are many more than 256 characters in the text we use, from non-Latin alphabets (Cyrillic, Arabic, and Chinese character sets, etc.) to emojis and other symbols like €, to accented characters like é and ü.
 
 The [UTF-8 encoding](https://en.wikipedia.org/wiki/UTF-8#Encoding) is the default encoding of text in the majority of software today.
