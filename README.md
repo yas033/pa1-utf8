@@ -1,5 +1,5 @@
 # PA1 - UTF-8: Due 10/10 at 10pm
-## PA1 Resubmission
+## PA1 Resubmission: Due Date??
 
 ### If you want to resubmit PA1, please read this section carefully. In order to get full credit for you resubmission, you need to pass all the tests in original PA1, while also implement an extra function described below.
 ### `void next_utf8_char(char str[], int32_t cpi, char result[])`
