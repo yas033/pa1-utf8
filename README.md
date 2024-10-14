@@ -1,4 +1,34 @@
 # PA1 - UTF-8: Due 10/10 at 10pm
+## PA1 Resubmission Only
+
+### If you want to resubmit PA1, please read this section carefully. In order to get full credit for you resubmission, you need to pass all the test in original PA1, while also implement an extra function described below.
+### `void next_utf8_char(char str[], int32_t cpi, char result[])`
+
+Takes a UTF-8 encoded string and a codepoint index, and save the next UTF-8 character immediately after the character represented by the code point at the given index to result array.
+
+#### Example Usage:
+```
+char str[] = "Joséph";
+char result[100];
+int32_t idx = 3;
+next_utf8_char(str, idx);
+printf("Next Character of Codepoint at Index 3: %s\n",result);
+// 'é' is the 4th codepoint represented by the bytes 0xC3 0xA9
+// 'ê' in UTF-8 hex bytes is represented as 0xC3 0xAA
+
+=== Output ===
+Next Character of Codepoint at Index 3: ê
+```
+
+Now, You final output that will be graded on will need to contain this extra line
+```
+Next Character of Codepoint at Index 3: FILL
+```
+
+### You will also need to correct your previous design questions if you got it wrong, and answer a new design questions below
+
+- In UTF-8 'overlong' encodings (i.e. encodings which do not encode Unicode letters as efficiently as possible) are considered invalid UTF-8 characters. This is largely due to them being a security risk since the same letter (i.e. 'A' or U+0041) can be encoded several ways. What are some reasons that this could pose a security vulnerability?
+
 
 ## Errata/Clarifications
 
@@ -180,21 +210,6 @@ Takes a UTF-8 encoded string and an codepoint index, and returns if the code poi
 For simplicity for this question, we will define that that the “animal emojii” are in two ranges: from 🐀 to 🐿️ and from 🦀 to 🦮. (Yes, this technically includes things like 🐽 which are only related to or part of an animal, and excludes a few things like 🙊, 😸, which are animal faces.). You may find the [wikipedia page on Unicode emoji](https://en.wikipedia.org/wiki/List_of_emojis) helpful here.
 
 
-### `char next_utf8_char(char str[], int32_t cpi)`
-
-Takes a UTF-8 encoded string and a codepoint index, and returns the next UTF-8 character immediately after the character represented by the code point at the given index.
-
-#### Example Usage:
-```
-char str[] = "Joséph";
-int32_t idx = 3;
-printf("Char in UTF-8 sequence after codepoint at index %d in %s is %c\n", idx, str, next_utf8_char(str, idx));
-// 'é' is the 4th codepoint represented by the bytes 0xC3 0xA9
-// 'ê' in UTF-8 hex bytes is represented as 0xC3 0xAA
-
-=== Output ===
-Char in UTF-8 sequence after codepoint at index 3 in Joséph is ê
-```
 
 ## UTF-8 Analyzer
 
@@ -257,9 +272,6 @@ Here are some other ideas for tests you should write. They aren't necessarily co
 
 Answer each of these with a few sentences or paragraphs; don't write a whole essay, but use good writing practice to communicate the essence of the idea. A good response doesn't need to be long, but it needs to have attention to detail and be clear. Examples help!
 
-- In UTF-8 'overlong' encodings (i.e. encodings which do not encode Unicode letters as efficiently as possible) are considered invalid UTF-8 characters. This is largely due to them being a security risk since the same letter (i.e. 'A' or U+0041) can be encoded several ways. What are some reasons that this could pose a security vulnerability?
-
-(older design questions)
 - Another encoding of Unicode is UTF-32, which encodes *all* Unicode code points in 4 bytes. For things like ASCII, the leading 3 bytes are all 0's. What are some tradeoffs between UTF-32 and UTF-8?
 
 - UTF-8 has a leading `10` on all the bytes past the first for multi-byte code points. This seems wasteful – if the encoding for 3 bytes were instead `1110XXXX XXXXXXXX XXXXXXXX` (where `X` can be any bit), that would fit 20 bits, which is over a million code points worth of space, removing the need for a 4-byte encoding. What are some tradeoffs or reasons the leading `10` might be useful? Can you think of anything that could go wrong with some programs if the encoding didn't include this restriction on multi-byte code points?
