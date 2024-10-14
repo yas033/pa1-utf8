@@ -1,7 +1,7 @@
 # PA1 - UTF-8: Due 10/10 at 10pm
 ## PA1 Resubmission
 
-### If you want to resubmit PA1, please read this section carefully. In order to get full credit for you resubmission, you need to pass all the test in original PA1, while also implement an extra function described below.
+### If you want to resubmit PA1, please read this section carefully. In order to get full credit for you resubmission, you need to pass all the tests in original PA1, while also implement an extra function described below.
 ### `void next_utf8_char(char str[], int32_t cpi, char result[])`
 
 Takes a UTF-8 encoded string and a codepoint index, and save the next UTF-8 character immediately after the character represented by the code point at the given index to result array.
@@ -25,7 +25,7 @@ Now, You final output that will be graded on will need to contain this extra lin
 Next Character of Codepoint at Index 3: FILL
 ```
 
-### You will also need to correct your previous design questions if you got it wrong, and answer a new design questions below
+### You will also need to correct your previous design questions if you got it wrong, and answer a new design question below
 
 - In UTF-8 'overlong' encodings (i.e. encodings which do not encode Unicode letters as efficiently as possible) are considered invalid UTF-8 characters. This is largely due to them being a security risk since the same letter (i.e. 'A' or U+0041) can be encoded several ways. What are some reasons that this could pose a security vulnerability?
 
