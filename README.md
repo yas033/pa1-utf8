@@ -44,7 +44,9 @@ Next Character of Codepoint at Index 1: N
 
 ### You will also need to the answer following updated DESIGN question in your resubmission:
 
-- In UTF-8 'overlong' encodings (i.e. encodings which do not encode Unicode letters as efficiently as possible) are considered invalid UTF-8 characters. This is largely due to them being a security risk since the same letter (i.e. 'A' or U+0041) can be encoded several ways. What are some reasons that this could pose a security vulnerability?
+In UTF-8 'overlong' encodings (i.e. encodings which do not encode Unicode letters as efficiently as possible) are considered invalid UTF-8 characters. This is largely due to them being a security risk since the same letter (i.e. 'A' or U+0041) can be encoded several ways. 
+- Give two examples showing the correct and possible overlong encodings of a UTF-8 character.
+- What are some problems that can occur in an application if overlong encodings are allowed?
 
 ## Errata/Clarifications
 
