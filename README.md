@@ -23,8 +23,13 @@ Next Character of Codepoint at Index 3: ê
 
 Now, Your final output on running the `utfanalyzer` code that will be graded should contain this extra line
 ```
-Next Character of Codepoint at Index 1: FILL
+Next Character of Codepoint at Index 3: FILL
 ```
+If the number of codepoints in the input string is less than 4, this added line would only have the prompt without any character as follows:
+```
+Next Character of Codepoint at Index 3: 
+```
+
 The complete program output for example, should look like:
 ```
 $ ./utf8analyzer
@@ -37,7 +42,7 @@ Bytes per code point: 1 1 1 4 3 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1
 Substring of the first 6 code points: "My 🐩’s"
 Code points as decimal numbers: 77 121 32 128041 8217 115 32 110 97 109 101 32 105 115 32 69 114 100 337 115 46
 Animal emojis: 🐩
-Next Character of Codepoint at Index 1: N
+Next Character of Codepoint at Index 3: 🐪
 ```
 (All our tests will check for this newly added line, in addition to lines from the original PA)
 
@@ -246,7 +251,7 @@ Bytes per code point: 1 1 1 4 3 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1
 Substring of the first 6 code points: "My 🐩’s"
 Code points as decimal numbers: 77 121 32 128041 8217 115 32 110 97 109 101 32 105 115 32 69 114 100 337 115 46
 Animal emojis: 🐩
-Next Character of Codepoint at Index 1: N
+Next Character of Codepoint at Index 3: 🐪
 ```
 
 You can also test the contents of _files_ by using the `<` operator:
@@ -264,7 +269,7 @@ Bytes per code point: 1 1 1 4 3 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1
 Substring of the first 6 code points: "My 🐩’s"
 Code points as decimal numbers: 77 121 32 128041 8217 115 32 110 97 109 101 32 105 115 32 69 114 100 337 115 46
 Animal emojis: 🐩
-Next Character of Codepoint at Index 1: N
+Next Character of Codepoint at Index 3: 🐪
 ```
 
 ## Testing
