@@ -1,11 +1,11 @@
 # PA1 - UTF-8: Due 10/10 at 10pm
-<!---
-## PA1 Resubmission: Due Date??
+## PA1 Resubmission: Due Date 10/25 at 10pm
 
-### If you want to resubmit PA1, please read this section carefully. In order to get full credit for you resubmission, you need to pass all the tests in original PA1, while also implement an extra function described below.
+### If you want to resubmit PA1, please read this section carefully. You need to pass all the tests in the original PA1, while also implementing an extra function described below.
+
 ### `void next_utf8_char(char str[], int32_t cpi, char result[])`
 
-Takes a UTF-8 encoded string and a codepoint index, and save the next UTF-8 character immediately after the character represented by the code point at the given index to result array.
+Takes a UTF-8 encoded string and a codepoint index, and saves - in result array - the UTF-8 character that would be the logically next character in the UTF-8 standard sequence, immediately after the character represented by the code point at the given index.
 
 #### Example Usage:
 ```
@@ -21,15 +21,30 @@ printf("Next Character of Codepoint at Index 3: %s\n",result);
 Next Character of Codepoint at Index 3: ê
 ```
 
-Now, You final output that will be graded on will need to contain this extra line
+Now, Your final output on running the `utfanalyzer` code that will be graded should contain this extra line
 ```
-Next Character of Codepoint at Index 3: FILL
+Next Character of Codepoint at Index 1: FILL
 ```
+The complete program output for example, should look like:
+```
+$ ./utf8analyzer
+Enter a UTF-8 encoded string: My 🐩’s name is Erdős.
+Valid ASCII: false
+Uppercased ASCII: "MY 🐩’S NAME IS ERDőS."
+Length in bytes: 27
+Number of code points: 21
+Bytes per code point: 1 1 1 4 3 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1
+Substring of the first 6 code points: "My 🐩’s"
+Code points as decimal numbers: 77 121 32 128041 8217 115 32 110 97 109 101 32 105 115 32 69 114 100 337 115 46
+Animal emojis: 🐩
+Next Character of Codepoint at Index 1: N
+```
+(All our tests will check for this newly added line, in addition to lines from the original PA)
 
-### You will also need to correct your previous design questions if you got it wrong, and answer a new design question below
+
+### You will also need to the answer following updated DESIGN question in your resubmission:
 
 - In UTF-8 'overlong' encodings (i.e. encodings which do not encode Unicode letters as efficiently as possible) are considered invalid UTF-8 characters. This is largely due to them being a security risk since the same letter (i.e. 'A' or U+0041) can be encoded several ways. What are some reasons that this could pose a security vulnerability?
---->
 
 ## Errata/Clarifications
 
@@ -229,6 +244,7 @@ Bytes per code point: 1 1 1 4 3 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1
 Substring of the first 6 code points: "My 🐩’s"
 Code points as decimal numbers: 77 121 32 128041 8217 115 32 110 97 109 101 32 105 115 32 69 114 100 337 115 46
 Animal emojis: 🐩
+Next Character of Codepoint at Index 1: N
 ```
 
 You can also test the contents of _files_ by using the `<` operator:
@@ -246,6 +262,7 @@ Bytes per code point: 1 1 1 4 3 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1
 Substring of the first 6 code points: "My 🐩’s"
 Code points as decimal numbers: 77 121 32 128041 8217 115 32 110 97 109 101 32 105 115 32 69 114 100 337 115 46
 Animal emojis: 🐩
+Next Character of Codepoint at Index 1: N
 ```
 
 ## Testing
@@ -269,7 +286,7 @@ Here are some other ideas for tests you should write. They aren't necessarily co
 - Strings with and without animal emojii, including at the beginning, middle, and end of the string, and at the beginning, middle, and end of the range
 - Strings of exactly 5 characters
 
-## Design Questions
+## Original PA Design Questions (Not required in resubmission)
 
 Answer each of these with a few sentences or paragraphs; don't write a whole essay, but use good writing practice to communicate the essence of the idea. A good response doesn't need to be long, but it needs to have attention to detail and be clear. Examples help!
 
