@@ -5,7 +5,7 @@
 
 ### `void next_utf8_char(char str[], int32_t cpi, char result[])`
 
-Takes a UTF-8 encoded string and a codepoint index, and saves - in result array - the UTF-8 character that would be the logically next character in the UTF-8 standard sequence, immediately after the character represented by the code point at the given index.
+Takes a UTF-8 encoded string and a codepoint index. Calculates the codepoint at that index. Then, calculates the code point with value one higher (so e.g. for ”é“ U+00E9 that would be “ê” (U+00EA), and for “🐩” (U+1F429) that would be “🐪” (U+1F42A)). Saves the encoding of that code point in the `result` array starting at index `0`.
 
 #### Example Usage:
 ```
@@ -49,9 +49,12 @@ Next Character of Codepoint at Index 3: 🐪
 
 ### You will also need to answer the following updated DESIGN question in your resubmission:
 
-In UTF-8 'overlong' encodings (i.e. encodings which do not encode Unicode letters as efficiently as possible) are considered invalid UTF-8 characters. This is largely due to them being a security risk since the same letter (i.e. 'A' or U+0041) can be encoded several ways. 
-- Give two examples showing the correct and possible overlong encodings of a UTF-8 character.
-- What are some problems that can occur in an application if overlong encodings are allowed?
+Consider the 3-byte sequence `11100000 10000000 10100001`. Answer the following questions:
+
+- What code point does it encode in UTF-8, and what character is that?
+- What are the three other ways to encode that character?
+- Give an example of a character that has exactly three encodings (but not four, like the one in the previous example does)
+- What are some problems with having these multiple encodings, especially for ASCII characters? A web search for “overlong UTF-8 encoding” may be useful here.
 
 ## Errata/Clarifications
 
