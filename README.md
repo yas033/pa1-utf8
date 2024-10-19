@@ -47,7 +47,7 @@ Next Character of Codepoint at Index 3: 🐪
 (All our tests will check for this newly added line, in addition to lines from the original PA)
 
 
-### You will also need to the answer following updated DESIGN question in your resubmission:
+### You will also need to answer the following updated DESIGN question in your resubmission:
 
 In UTF-8 'overlong' encodings (i.e. encodings which do not encode Unicode letters as efficiently as possible) are considered invalid UTF-8 characters. This is largely due to them being a security risk since the same letter (i.e. 'A' or U+0041) can be encoded several ways. 
 - Give two examples showing the correct and possible overlong encodings of a UTF-8 character.
