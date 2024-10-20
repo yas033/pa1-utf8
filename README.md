@@ -1,5 +1,5 @@
-# PA1 - UTF-8: Due 10/10 at 10pm
-## PA1 Resubmission: Due Date 10/25 at 10pm
+# PA1 - UTF-8:
+## PA1 Resubmission: Due Date 10/28 at 10pm
 
 ### If you want to resubmit PA1, please read this section carefully. You need to pass all the tests in the original PA1, while also implementing an extra function described below.
 
