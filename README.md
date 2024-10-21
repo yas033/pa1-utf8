@@ -12,7 +12,7 @@ Takes a UTF-8 encoded string and a codepoint index. Calculates the codepoint at 
 char str[] = "Joséph";
 char result[100];
 int32_t idx = 3;
-next_utf8_char(str, idx);
+next_utf8_char(str, idx, result);
 printf("Next Character of Codepoint at Index 3: %s\n",result);
 // 'é' is the 4th codepoint represented by the bytes 0xC3 0xA9
 // 'ê' in UTF-8 hex bytes is represented as 0xC3 0xAA
