@@ -25,7 +25,7 @@ Now, Your final output on running the `utfanalyzer` code that will be graded sho
 ```
 Next Character of Codepoint at Index 3: FILL
 ```
-If the number of codepoints in the input string is less than 4, this added line would only have the prompt without any character as follows:
+**Note: ** If the number of codepoints in the input string _is less than 4_, this added line would only have the prompt _without any character_ as follows:
 ```
 Next Character of Codepoint at Index 3: 
 ```
